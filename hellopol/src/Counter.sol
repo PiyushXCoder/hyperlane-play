@@ -27,4 +27,6 @@ contract Counter {
         uint256 fee = mailbox.quoteDispatch(destination, recipient, body);
         mailbox.dispatch{value: fee}(destination, recipient, body); 
     }
+
+    receive() external payable {}
 }
