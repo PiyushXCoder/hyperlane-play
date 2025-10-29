@@ -12,7 +12,7 @@ hellosol = "4N8f8zmwb3cuT8wMYAbEqRw47UxrLfwk3HXiCmJMwmvu"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "devnet"
+cluster = "testnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]

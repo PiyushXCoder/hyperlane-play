@@ -6,12 +6,19 @@ declare_id!("4N8f8zmwb3cuT8wMYAbEqRw47UxrLfwk3HXiCmJMwmvu");
 pub mod hellosol {
     use super::*;
 
-    pub fn receive_message(ctx: Context<Initialize>, message: Vec<u8>) -> Result<()> {
-        msg!("Greetings from: {:?}", ctx.program_id);
-        msg!("Received: {:?}", String::from_utf8(message));
+    pub fn handle(
+        _ctx: Context<HandleCtx>,
+        origin: u32,
+        sender: [u8; 32],
+        message: Vec<u8>,
+    ) -> Result<()> {
+        msg!("📨 Hyperlane message received!");
+        msg!("From domain: {}", origin);
+        msg!("Sender: {:?}", sender);
+        msg!("Message: {}", String::from_utf8_lossy(&message));
         Ok(())
     }
 }
 
 #[derive(Accounts)]
-pub struct Initialize {}
+pub struct HandleCtx {}
