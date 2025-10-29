@@ -1,0 +1,4 @@
+**/helm
+test/outputs/**
+deployment-plan.yaml
+deployment-plans/**

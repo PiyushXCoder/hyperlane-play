@@ -1,0 +1,4 @@
+sepolia:
+  type: native
+fuji:
+  type: synthetic
